@@ -4,7 +4,10 @@
  */
 class SS13Webmap{
 	constructor(config){
-		if(!config.maps.url){
+		if(!config){
+			console.error("No configuration");
+			return
+		}else if(!config.maps.url){
 			console.error("Config has NO url!");
 			return null
 		}
@@ -13,8 +16,9 @@ class SS13Webmap{
 		this.buildMaps();
 	}
 	loadcfg(cfg){
+		console.log(cfg)
 		this.div_id = cfg.div_id || "webmap";
-		this.zoom = cfg.zoom || [0,0];
+		this.zoom = cfg.zoom || [4,8];
 		this.z_size = [[0,0],cfg.z_size] || [[0,0],[-255,255]];
 		this.attrib = cfg.attrib || "${POLY_QUOTES_HERE}";
 		
@@ -25,7 +29,10 @@ class SS13Webmap{
 		this.GPS = true;
 	}
 	buildMaps(){
-		if(this.init == true){console.error("Map already built, canceled building");return}
+		if(this.init == true){
+			console.error("Map already built, canceled building");
+			return
+		}
 		this.webmap = new L.map(this.div_id, {
 			"minZoom":this.zoom[0], "maxZoom":this.zoom[1],
 			"zoom": this.zoom[0], 
@@ -36,38 +43,56 @@ class SS13Webmap{
 		this.webmap.fitBounds(this.z_size);
 		this.webmap.setMaxBounds(this.z_size);
 		attachListener(this.webmap, this.z_size);
-		
-		L.tileLayer(this.mapUrl+"_1.png",{
-			nativeZooms:[this.zoom[0]]
-		}).addTo(this.webmap)
+		let a = this.buildTileLayer();
+		console.log(a)
+		L.control.layers(a.Station, a.pipenet).addTo(this.webmap);
+		//L.tileLayer(this.mapUrl+"_1.png",{
+		//	nativeZooms:this.zoom[0]
+		//}).addTo(this.webmap)
 		this.init = true;
 	}
 	buildTileLayer(){
 		var tiles = {
 			"Station":{},
-			"Pipenet":{}
+			"pipenet":{}
 		}
+		for(let bonk=1; this.mapcfg.z_all >= bonk; bonk++){
+			let metadat = this.mapcfg;
+			let name_map = "Base Map";
+			let name_pipe = "Pipenet";
+			let layer_map = new L.tileLayer(metadat.url+"_"+bonk+".png",{nativeZooms:this.zoom[0]});
+			let pipenet;
 
-		for(let bonk=0; this.mapcfg.z_all <= bonk; bonk++){
-			let metadat = findMetadat(bonk);
+			/* initialize Z1 as per useal */
+			if(bonk == 1){
+				layer_map.addTo(this.webmap);
+			}
+			if("Name" in this.z_specificmeta(bonk)){
+				name_map = this.z_specificmeta(bonk).Name;
+			}else if(bonk > 1){
+				name_map = "Deck "+bonk;
+			}
 
+			if("Pipe_Name" in this.z_specificmeta(bonk)){
+				name_pipe = this.z_specificmeta(bonk).Pipe_Name;
+			}else if(bonk > 1){
+				name_pipe = "Pipenet "+bonk;
+			}
+			if("Pipenet" in this.z_specificmeta(bonk)){
+				pipenet = new L.tileLayer(metadat.url_pipenet+"_"+bonk+".png",{nativeZooms:this.zoom[0]});
+				tiles.pipenet[name_pipe] = pipenet;
+			}
+			tiles.Station[name_map] = layer_map;
 		}
-
 		return tiles
 	}
-	findMetadat(z){
-		for(bonks in this.mapcfg.z_meta){
-			let bonk = this.mapcfg.z_meta[bonks]
-			if(bonk.Z == z){
-				return bonk
+	z_specificmeta(z){
+		for(var i in this.mapcfg.z_meta){
+			if(this.mapcfg.z_meta[i].Z == z){
+				console.log(this.mapcfg.z_meta[i])
+				return this.mapcfg.z_meta[i]
 			}
 		}
 		return {}
-	}
-	set GPS(valu){
-		this.cords = valu;
-	}
-	get GPS(){
-		return this.cords 
 	}
 }
