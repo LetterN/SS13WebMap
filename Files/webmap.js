@@ -60,7 +60,7 @@ class SS13Webmap{
 			let metadat = this.mapcfg;
 			let name_map = "Base Map";
 			let name_pipe = "Pipenet";
-			let layer_map = new L.tileLayer(metadat.url+"_"+bonk+".png",{nativeZooms:this.zoom[0]});
+			let layer_map = new L.tileLayer(metadat.url+"_"+bonk+".png",{nativeZooms:[this.zoom[0]]});
 			let pipenet;
 
 			/* initialize Z1 as per useal */
@@ -79,7 +79,7 @@ class SS13Webmap{
 				name_pipe = "Pipenet "+bonk;
 			}
 			if("Pipenet" in this.z_specificmeta(bonk)){
-				pipenet = new L.tileLayer(metadat.url_pipenet+"_"+bonk+".png",{nativeZooms:this.zoom[0]});
+				pipenet = new L.tileLayer(metadat.url_pipenet+"_"+bonk+".png",{nativeZooms:[this.zoom[0]]});
 				tiles.pipenet[name_pipe] = pipenet;
 			}
 			tiles.Station[name_map] = layer_map;
