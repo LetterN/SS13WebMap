@@ -1,0 +1,600 @@
+[
+	{
+    "name": "Bay12",
+    "icon": true,
+    "maps": [
+      {
+        "name": "SEV Torch",
+        "background": "tg",
+        "dir": "W",
+        "bounds": [[0, 0], [200, 200]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [100, 100], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Bay12/Torch/torch1_deck5-1.png"
+            },
+            {
+              "z": 2,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Bay12/Torch/torch2_deck4-1.png"
+            },
+            {
+              "z": 3,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Bay12/Torch/torch3_deck3-1.png"
+            },
+            {
+              "z": 4,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Bay12/Torch/torch4_deck2-1.png"
+            },
+            {
+              "z": 5,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Bay12/Torch/torch5_deck1-1.png"
+            },
+            {
+              "z": 6,
+              "name": "Bridge Deck",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Bay12/Torch/torch6_bridge-1.png"
+            }
+        ],
+					"pipenet": []
+				}
+      }
+    ]
+  },
+  {
+		"name": "BeeStation",
+		"maps": [
+			{
+        "name": "Box Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/Bee/BoxStation/BoxStation-1.png"
+						}
+					],
+					"pipenet": []
+				}
+      },
+			{
+        "name": "Delta Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [147, 151], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/Bee/DeltaStation/DeltaStation2-1.png"
+						}
+					],
+					"pipenet": []
+				}
+      },
+			{
+        "name": "Donut Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/Bee/DonutStation/DonutStation-1.png"
+						}
+					],
+					"pipenet": []
+				}
+      },
+			{
+        "name": "Kilo Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/Bee/KiloStation/KiloStation-1.png"
+						}
+					],
+					"pipenet": []
+				}
+			},
+			{
+        "name": "Meta Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/Bee/MetaStation/MetaStation-1.png"
+						}
+					],
+					"pipenet": []
+				}
+      },
+			{
+        "name": "Pubby Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/Bee/PubbyStation/PubbyStation-1.png"
+						}
+					],
+					"pipenet": []
+				}
+			}
+		]
+  },
+	{
+    "name": "Burger",
+    "maps": [
+      {
+        "name": "Burger Station",
+        "background": "common",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [166, 143], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Burger/Burger/burgerstation-1.png"
+            }
+        ],
+					"pipenet": []
+				}
+      }
+    ]
+  },
+	{
+    "name": "Eris",
+    "maps": [
+      {
+        "name": "CEV Eris",
+        "background": "common",
+        "bounds": [[0, 0], [200, 200]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [100, 100], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+            {
+              "z":1,
+              "url":"https://affectedarc07.github.io/SS13WebMap-Images/Eris/Eris/_CEV_Eris-1.png"
+            },
+            {
+              "z":2,
+              "url":"https://affectedarc07.github.io/SS13WebMap-Images/Eris/Eris/_CEV_Eris-2.png"
+            },
+            {
+              "z":3,
+              "url":"https://affectedarc07.github.io/SS13WebMap-Images/Eris/Eris/_CEV_Eris-3.png"
+            },
+            {
+              "z":4,
+              "url":"https://affectedarc07.github.io/SS13WebMap-Images/Eris/Eris/_CEV_Eris-4.png"
+            },
+            {
+              "z":5,
+              "url":"https://affectedarc07.github.io/SS13WebMap-Images/Eris/Eris/_CEV_Eris-5.png"
+            }
+        ],
+					"pipenet": []
+				}
+      }
+    ]
+  },
+	{
+    "name": "Citadel Station RP",
+    "maps": [
+      {
+        "name": "Polaris",
+        "background": "common",
+        "bounds": [[0, 0], [300, 300]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [150, 150], "zoom": 4
+				},
+				"map_files": {
+          "map": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Polaris/polaris-1-1.png"
+            }
+          ],
+					"pipenet": []
+				}
+      },
+      {
+        "name": "SouthernCross",
+        "background": "common",
+        "bounds": [[0, 0], [300, 300]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [150, 150], "zoom": 4
+				},
+				"map_files": {
+          "map": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/SouthernCross/southern_cross-1-1.png"
+            },
+            {
+              "z": 2,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/SouthernCross/southern_cross-1-2.png"
+            },
+            {
+              "z": 3,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/SouthernCross/southern_cross-1-3.png"
+            }
+        ],
+					"pipenet": []
+				}
+      },
+      {
+        "name": "Tether",
+        "background": "common",
+        "bounds": [[0, 0], [300, 300]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [150, 150], "zoom": 4
+				},
+				"map_files": {
+          "map": [
+            {
+              "z": 1,
+              "name": "Surface 1",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Tether/tether-01-surface1-1.png"
+            },
+            {
+              "z": 2,
+              "name": "Surface 2",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Tether/tether-02-surface2-1.png"
+             },
+            {
+              "z": 3,
+              "name": "Surface 3",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Tether/tether-03-surface3-1.png"
+             },
+            {
+              "z": 4,
+              "name": "Transit",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Tether/tether-04-transit-1.png"
+            },
+            {
+              "z": 5,
+              "name": "Station 1",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Tether/tether-05-station1-1.png"
+             },
+            {
+              "z": 6,
+              "name": "Station 2",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Tether/tether-06-station2-1.png"
+             },
+            {
+              "z": 7,
+              "name": "Station 3",
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Tether/tether-07-station3-1.png"
+            }
+          ],
+					"pipenet": []
+				}
+      },
+      {
+        "name": "Virgo",
+        "background": "common",
+        "bounds": [[0, 0], [300, 300]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [150, 150], "zoom": 4
+				},
+				"map_files": {
+          "map": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/CitRP/Virgo/virgo-1-1.png"
+            }
+          ],
+					"pipenet": []
+				}
+      }
+    ]
+  },
+  {
+    "name": "Citadel Station",
+    "maps": [
+      {
+        "name": "Box Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [147, 151], "zoom": 4
+				},
+				"map_files": {
+          "map": [
+            {
+              "z":1,
+              "url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/BoxStation/BoxStation-1.png"
+            }
+          ],
+          "pipenet": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Cit/BoxStation/BoxStation-2.png"
+            }
+          ]
+				}
+      },
+      {
+        "name": "Cog Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [147, 151], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Cit/CogStation/CogStation-1.png"
+            }
+          ],
+          "pipenet": [
+            {
+              "z": 1,
+              "url": "https://affectedarc07.github.io/SS13WebMap-Images/Cit/CogStation/CogStation-2.png"
+            }
+          ]
+				}
+      },
+			{
+        "name": "Delta Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [147, 151], "zoom": 4
+				},
+				"map_files": {
+					"map":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/DeltaStation/DeltaStation2-1.png"}],
+          "pipenet":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/DeltaStation/DeltaStation2-2.png"}]
+				}
+      },
+			{
+        "name": "Lambda Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+          "map":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/Lambda/lambda-1.png"}],
+          "pipenet":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/Lambda/lambda-2.png"}]
+				}
+      },
+			{
+        "name": "Meta Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+          "map":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/MetaStation/MetaStation-1.png"}],
+          "pipenet":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/MetaStation/MetaStation-2.png"}]
+				}
+      },
+			{
+        "name": "Omega Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+          "map":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/OmegaStation/OmegaStation-1.png"}],
+          "pipenet":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/OmegaStation/OmegaStation-2.png"}]
+				}
+      },
+			{
+        "name": "Pubby Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+          "map":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/PubbyStation/PubbyStation-1.png"}],
+          "pipenet":[{"z":1,"url":"https://affectedarc07.github.io/SS13WebMap-Images/Cit/PubbyStation/PubbyStation-2.png"}]
+				}
+			}
+    ]
+  },
+  {
+    "name": "Chaotic Onyx",
+    "maps": [
+      {
+        "name": "Exodus",
+        "background": "tg",
+        "dir":"W",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+          "map": [
+            {"z":1,"name":"Main Level","url":"https://affectedarc07.github.io/SS13WebMap-Images/Onyx/Exodus/exodus-2-1.png"},
+            {"z":2,"name":"Ghetto Level","url":"https://affectedarc07.github.io/SS13WebMap-Images/Onyx/Exodus/exodus-1-1.png"},
+            {"z":3,"name":"Station Satellite","url":"https://affectedarc07.github.io/SS13WebMap-Images/Onyx/Exodus/exodus-4-1.png"},
+            {"z":4,"name":"Mining Outpost","url":"https://affectedarc07.github.io/SS13WebMap-Images/Onyx/Exodus/exodus-6-1.png"}
+        ],
+					"pipenet": []
+				}
+      }
+    ]
+  },
+	{
+    "name": "TG",
+    "icon": true,
+		"maps": [
+			{
+        "name": "Box Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/TG/BoxStation/BoxStation-1.png"
+						}
+					],
+					"pipenet": [
+						{
+							"z": 1,
+							"url": "https://affectedarc07.github.io/SS13WebMap-Images/TG/BoxStation/BoxStation-2.png"
+						}
+					]
+				}
+      },
+			{
+        "name": "Delta Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [147, 151], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/TG/DeltaStation/DeltaStation2-1.png"
+						}
+					],
+					"pipenet": [
+						{
+							"z": 1,
+							"url": "https://affectedarc07.github.io/SS13WebMap-Images/TG/DeltaStation/DeltaStation2-2.png"
+						}
+					]
+				}
+      },
+			{
+        "name": "Donut Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/TG/DonutStation/DonutStation-1.png"
+						}
+					],
+					"pipenet": [
+						{
+							"z": 1,
+							"url": "https://affectedarc07.github.io/SS13WebMap-Images/TG/DonutStation/DonutStation-2.png"
+						}
+					]
+				}
+			},
+			{
+        "name": "Meta Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/TG/MetaStation/MetaStation-1.png"
+						}
+					],
+					"pipenet": [
+						{
+							"z": 1,
+							"url": "https://affectedarc07.github.io/SS13WebMap-Images/TG/MetaStation/MetaStation-2.png"
+						}
+					]
+				}
+      },
+			{
+        "name": "Pubby Station",
+        "background": "tg",
+        "bounds": [[0, 0], [255, 255]],
+				"map_config": {
+					"minZoom":4, "maxZoom":8,
+					"center": [128, 128], "zoom": 4
+				},
+				"map_files": {
+					"map": [
+						{
+							"z": 1,
+							"url":"https://affectedarc07.github.io/SS13WebMap-Images/TG/PubbyStation/PubbyStation-1.png"
+						}
+					],
+					"pipenet": [
+						{
+							"z": 1,
+							"url": "https://affectedarc07.github.io/SS13WebMap-Images/TG/PubbyStation/PubbyStation-2.png"
+						}
+					]
+				}
+			}
+		]
+	}
+]

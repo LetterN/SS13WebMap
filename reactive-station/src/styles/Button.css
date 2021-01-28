@@ -1,0 +1,59 @@
+.button {
+  border-radius: 5px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+
+  background-color: #585858;
+  text-decoration: none;
+  cursor: pointer;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
+  transition: all 200ms ease;
+}
+.button.small {
+  height: 26px;
+  line-height: 26px;
+  padding: 0px 14px;
+}
+.button:hover{
+  background-color: #808080;
+}
+
+.ss13-blue {
+	background-color: #40628a !important;
+}
+.button.ss13-blue:hover {
+  background-color: #5684b9 !important;
+}
+.ss13-blue-text {
+	color: #40628a !important;
+}
+.pepperthot-teal {
+	background-color: #4bff85 !important;
+}
+.button.pepperthot-teal:hover {
+  background-color: #2fce61 !important;
+}
+.pepperthot-teal-text {
+	color: #4bff85 !important;
+}
+.tgmc-blue {
+	background-color: #00bfff !important;
+}
+.tgmc-blue-text {
+	color: #00bfff !important;
+}
+.nsv13 {
+	background-color: #A39976 !important;
+}
+.nsv13-text {
+	color: #A39976 !important;
+}

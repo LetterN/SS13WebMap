@@ -1,0 +1,69 @@
+{
+	"tg": {
+		"layers_min": 3,
+		"layers_max": 5,
+		"icons": [
+			{
+				"img": "./assets/parallax/tg/layer_1.png",
+				"speed": 0.6,
+				"layer": 1,
+				"main_layer": true
+			},
+			{
+				"img": "./assets/parallax/tg/layer_2.png",
+				"speed": 1,
+				"layer": 2
+			},
+			{
+				"img": "./assets/parallax/tg/layer_3.png",
+				"speed": 1.4,
+				"layer": 3
+      }
+    ],
+    "random": [
+			{
+				"img": "./assets/parallax/tg/space_gas.png",
+				"speed": 3,
+				"layer": 3
+			},
+			{
+				"img": "./assets/parallax/tg/asteroids.png",
+				"speed": 3,
+				"layer": 3
+			}
+		]
+	},
+	"common": {
+		"layers_min": 3,
+		"layers_max": 3,
+		"icons": [
+			{
+				"img": "./assets/parallax/common/layer_1.png",
+				"speed": 0.6,
+				"layer": 1,
+				"main_layer": true
+			},
+			{
+				"img": "./assets/parallax/common/layer_2.png",
+				"speed": 1,
+				"layer": 2
+			},
+			{
+				"img": "./assets/parallax/common/layer_3.png",
+				"speed": 1.4,
+				"layer": 3
+			}
+		]
+  },
+  "planet": {
+    "layers_min": 1,
+    "layers_max": 1,
+    "static": false,
+    "icons": [
+			{
+				"img": "./assets/parallax/planet/grass.png",
+				"main_layer": true
+			}
+    ]
+  }
+}

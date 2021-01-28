@@ -1,0 +1,30 @@
+/*
+PARALLAX STUFF
+*/
+@keyframes loop_N {
+	from {background-position: 0 0;}
+	to {background-position: 0 960px;}
+}
+@keyframes loop_S {
+	from {background-position: 0 0;}
+	to {background-position: 0 -960px;}
+}
+@keyframes loop_E {
+	from {background-position: 0 0;}
+	to {background-position: -960px 0;}
+}
+@keyframes loop_W {
+	from {background-position: 0 0;}
+	to {background-position: 960px 0;}
+}
+
+.parallax_container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-repeat: repeat;
+	animation: linear infinite;
+	z-index: -1;
+}
