@@ -1,1 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+## NPM garbage
+node_modules
+*.log
+package-lock.json
+
+## Yarn stuff
+/.pnp.*
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/versions
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
+
 Thumbs.db
