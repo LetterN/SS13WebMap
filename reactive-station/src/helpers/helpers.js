@@ -5,19 +5,6 @@
  */
 
 /**
- * Reads the "?thing=no"
- * ...or you can use URL() because this is html5
- * @returns {JSON} JSON
- */
-export const readquery = () => {
-  let json_out = {};
-  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (m, key, value) => {
-    json_out[key] = value;
-  });
-  return json_out;
-};
-
-/**
  * Creates an array of values by running each element in collection
  * thru an iteratee function. The iteratee is invoked with three
  * arguments: (value, index|key, collection).
@@ -49,4 +36,18 @@ export const map = iterateeFn => collection => {
     return result;
   }
   throw new Error(`map() can't iterate on type ${typeof collection}`);
+};
+
+/**
+ * JavaScript implementation of the Durstenfeld shuffle.
+ *
+ * **THIS IS AN INLINE SHUFFLE,
+ *  MAKE SURE YOU COPY THE ARRY IF YOU WANT TO KEEP IT THE SAME**
+ * @param {Array} array
+ */
+export const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 };

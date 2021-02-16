@@ -37,7 +37,7 @@ export class Collapsible extends Component {
               icon={open ? faArrowCircleUp : faArrowCircleDown} />
           </div>
         </div>
-        <div className="collapsible-body" style={{ maxHeight: open ? "100vh" : "0", paddingTop: open ? "1rem" : "0rem", paddingBottom: open ? "1rem" : "0rem" }}>
+        <div className={`collapsible-body ${open ? "collapsible-open" : "collapsible-closed"}`}>
           {children}
         </div>
       </div>

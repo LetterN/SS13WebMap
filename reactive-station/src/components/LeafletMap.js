@@ -46,6 +46,9 @@ export class LeafletMap extends Component {
      *   and it looks bad when zoom is above 5)
      */
     this.webmap_pixel_improve = false;
+    if (this.debug) {
+      console.info("Config:", props.config);
+    }
   }
   componentDidMount() {
     if (!this.bounds) {
@@ -61,7 +64,7 @@ export class LeafletMap extends Component {
     this.webmap.fitBounds(this.bounds).setMaxBounds(this.bounds);
     this.webmap.attributionControl.setPrefix('SS13 WebMap by AffectedArc07');
 
-    // Bake the layers (todo: preload image!)
+    // Bake the layers (todo: preload image @ main page)
     const map_layers = bakeLayer(this.image_config, this.bounds, this.webmap);
     Leaflet.control.layers(map_layers.maps, map_layers.pipenet)
       .addTo(this.webmap);
@@ -83,10 +86,10 @@ export class LeafletMap extends Component {
         .redraw()
         .bindTooltip(`${lat}, ${lng}${this.debug ? `, (REAL ${e.latlng})` : ""}`)
         .openTooltip()
-        .addTo(this.webmap);
+        .addTo(this.webmap); // todo: test if this is needed
     });
 
-    // At 6 we want it to be pixelated.
+    // At 6 we want it to be pixelated (better image quality & performance).
     this.webmap.on('zoomend', e => {
       const zoom = Math.floor(this.webmap.getZoom());
 
@@ -106,12 +109,13 @@ export class LeafletMap extends Component {
   render() {
     return (
       <Fragment>
-        {/* uncomment to enable lazytelemetry */}
-        {/* <div>
-          <b>DEBUG:</b>
-          {JSON.stringify(this.props.config)}<br />
-          {JSON.stringify(this.mapconfig)} <br />
-        </div> */}
+        {this.debug && (
+          <div>
+            <b>DEBUG:</b>
+            {JSON.stringify(this.props.config)}<br />
+            {JSON.stringify(this.mapconfig)} <br />
+          </div>
+        )}
         <div
           className={"webmap"}
           ref={this.canvasRef} />
@@ -138,7 +142,7 @@ const bakeLayer = (data, bounds, webmap) => {
     // something something tell the worker to update the URL img
     const zlevel = mapjson[station_map].z;
     const name = mapjson[station_map].name;
-    // fetch(URL);
+
     const image = Leaflet.imageOverlay(URL, bounds);
     let zname = "Base Map";
 

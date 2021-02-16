@@ -1,4 +1,8 @@
-
+/**
+ * @file
+ * @copyright 2021 LetterN
+ * @license MIT
+ */
 
 export const Icon = props => {
   const { url } = props;

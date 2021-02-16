@@ -9,9 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faSave, faHeart, faExternalLinkSquareAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { setItem, getItem, configurables } from '../helpers/storage';
-import { PARALLAX_QUALITY } from '../helpers/constants';
-import { map } from '../helpers/helpers';
+import { setItem, getItem, PARALLAX_QUALITY, map } from '../helpers';
 import { Collapsible } from './Collapsible';
 
 export const Settings = props => {
@@ -124,7 +122,7 @@ class Info extends Component {
         <br />
         <h4>Webmap Info</h4>
         Leaflet Version: {packageJson.dependencies.leaflet} <br />
-        Webmap Version: {packageJson.version} &nbsp; (Latest)<br />
+        Webmap Version: {packageJson.version}<br />
         Service worker:
         {navigator?.serviceWorker?.controller ? (
           navigator?.serviceWorker?.controller?.state === "activated" ? (

@@ -7,10 +7,8 @@ import { Component, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faCog, faExclamationCircle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-
 import { LeafletMap, Collapsible, ParallaxBG, Settings, Icon } from './components';
-import { STATES, PARALLAX_QUALITY, ParallaxDataFallback } from './helpers/constants';
-import { getItem, setItem } from './helpers/storage';
+import { getItem, setItem, STATES, PARALLAX_QUALITY, ParallaxDataFallback } from './helpers';
 
 export default class MainPage extends Component {
   constructor(props) {
@@ -20,9 +18,9 @@ export default class MainPage extends Component {
       "options_visible": false,
       "available_maps": [],
       "parallax_types": [],
+      "selected_instance": {},
     };
-    this.selected_instance_dat = {};
-
+    // checks if paralax quality exists, if not set it
     const iQ = getItem("parallax_quality");
     if (!iQ) {
       setItem("parallax_quality", PARALLAX_QUALITY.MEDIUM);
@@ -32,31 +30,41 @@ export default class MainPage extends Component {
 
   componentDidMount() {
     // cannot use setstate on constructor
-    this.JsonFetcher();
+    this.fetchIndex();
   }
-
-  JsonFetcher = async () => {
-    const avail_map = await (
-      await fetch(`${process.env.PUBLIC_URL}/data/available_maps.json`)
-    ).json();
-    this.setState({ "available_maps": avail_map });
+  // Async handler which fetches the map indexes
+  fetchIndex = async () => {
     const para_type = await (
       await fetch(`${process.env.PUBLIC_URL}/data/parallax_types.json`)
     ).json();
     this.setState({ "parallax_types": para_type });
-  };
+    const avail_map = await (
+      await fetch(`${process.env.PUBLIC_URL}/data/available_maps.json`)
+    ).json();
+    this.setState({ "available_maps": avail_map });
+    this.paramChecker();
+  }
+  // does what it says, check the param and see if it already has something
+  paramChecker = () => {
+    const url = new URL(window.location.href);
+    // url.searchParams
+    // this.setMap()
+  }
 
   // swaps the map and sets the state to MAP
-  setMap(data) {
-    this.selected_instance_dat = data;
-    console.log("SET", data);
-    this.setState({ "page": STATES.MAP });
+  setMap(data, coderbase) {
+    this.setState({ "page": STATES.MAP, "selected_instance": data });
+    window.location.href = process.env.PUBLIC_URL
+      + '/map/'
+      + coderbase
+      + '/'
+      + data?.name.toLowerCase();
   }
 
   // return to menu and clear cached map
   resetMap() {
-    this.selected_instance_dat = {};
-    this.setState({ "page": STATES.MENU });
+    this.setState({ "page": STATES.MENU, "selected_instance": {} });
+    window.location.href = process.env.PUBLIC_URL;
   }
 
   // option toggle
@@ -73,8 +81,8 @@ export default class MainPage extends Component {
         )}
         <ParallaxBG
           quality={this.cachedQuality}
-          type={("background" in this.selected_instance_dat) ? this.selected_instance_dat["background"] : "tg"}
-          dir={("dir" in this.selected_instance_dat) ? this.selected_instance_dat["dir"] : "E"}
+          type={("background" in this.state.selected_instance) ? this.state.selected_instance["background"] : "tg"}
+          dir={("dir" in this.state.selected_instance) ? this.state.selected_instance["dir"] : "E"}
           data={
             this.state.parallax_types.length
               ? this.state.parallax_types
@@ -104,15 +112,15 @@ export default class MainPage extends Component {
               }>
                 <FAQText />
               </Collapsible>
-              {this.state.available_maps.length ? (
+              {this.state.available_maps?.length ? (
+                this.state.available_maps.map((map, k) => (
+                  <Maps key={k} repo={map} setMap={this.setMap.bind(this)} />
+                ))
+              ) : (
                 <div>
                   Loading maps!
                   <div className="loader-spinner" />
                 </div>
-              ) : (
-                this.state.available_maps.map((map, k) => (
-                  <Maps key={k} map={map} setMap={this.setMap.bind(this)} />
-                ))
               )}
             </div>
           </div>
@@ -125,7 +133,7 @@ export default class MainPage extends Component {
               Return
             </div>
             <LeafletMap
-              config={this.selected_instance_dat}
+              config={this.state.selected_instance}
             />
           </Fragment>
         )}
@@ -136,33 +144,40 @@ export default class MainPage extends Component {
 
 const Maps = props => {
   const {
-    map,
-    setMap = a => {},
+    repo,
+    setMap = (dat, rep) => {},
   } = props;
+  const {
+    name = "code_broke_oh_god_oh_fuck",
+    icon,
+    maps,
+  } = repo;
   return (
     <Collapsible
-      key={map.name}
+      key={name}
       title={
         <div
           style={{ display: "flex", alignItems: "center" }}>
-          {!!map.icon && (
+          {!!icon && (
             <Icon
               url={
                 process.env.PUBLIC_URL
-                + `/assets/logos/${map.name.toLowerCase()}.png`
+                + '/assets/logos/'
+                + name.toLowerCase()
+                + '.png'
               } />
           )}
           <span style={{ marginLeft: "0.5em" }}>
-            {map.name}
+            {name}
           </span>
         </div>
       }>
       <div className="content-buttonrail">
-        {map?.maps?.map(map_instance => (
+        {maps?.map(map_instance => (
           <div
             className="button ss13-blue"
             key={map_instance.name}
-            onClick={e => setMap(map_instance)}>
+            onClick={e => setMap(map_instance, name.toLowerCase())}>
             {map_instance.name}
           </div>
         ))}
